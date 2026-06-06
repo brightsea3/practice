@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practice Test 1 - IELTS Computer-Delivered</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header class="ielts-header">
+        <div class="test-title">IELTS Mock Test - Practice Test 2</div>
+        <div class="timer-container">
+            <span class="timer-label">Time:</span>
+            <span id="timer">60:00</span>
+        </div>
+        <button class="exit-btn" onclick="submitTest()">Finish Test</button>
+    </header>
+
+    <nav class="skill-nav">
+        <button class="nav-tab active" id="tab-listening" onclick="switchSkill('listening')">Listening</button>
+        <button class="nav-tab" id="tab-reading" onclick="switchSkill('reading')">Reading</button>
+        <button class="nav-tab" id="tab-writing" onclick="switchSkill('writing')">Writing</button>
+    </nav>
+
+    <main class="test-container">
+        
+        <section id="listening-section" class="skill-section active">
+            
+            <div class="instruction-box">
+                <p><strong>Listening Test:</strong> Nhấn vào từng Part bên dưới. Mỗi Part sẽ có một file nghe riêng biệt.</p>
+            </div>
+
+            <div class="reading-parts-nav">
+                <button class="part-btn active" onclick="switchListeningPart(1)">Part 1</button>
+                <button class="part-btn" onclick="switchListeningPart(2)">Part 2</button>
+                <button class="part-btn" onclick="switchListeningPart(3)">Part 3</button>
+                <button class="part-btn" onclick="switchListeningPart(4)">Part 4</button>
+            </div>
+
+            <div id="listening-part-1" class="reading-part active" style="overflow-y: auto;">
+                <div class="questions-wrapper" style="max-width: 800px; margin: 0 auto;">
+                    
+                    <div style="text-align: center; margin-bottom: 20px;">
+                        <audio controls class="audio-player" style="width: 80%;">
+                            <source src="Test2_1.mp3" type="audio/mpeg">
+                        </audio>
+                    </div>
+
+                    <h3>Questions 1-10</h3>
+                    <p>Write <strong>NO MORE THAN ONE WORD AND/OR A NUMBER</strong> for each answer.</p>
+                    
+                    <div style="background: #fdfdfd; padding: 20px; border: 1px solid #ccc; border-radius: 5px; margin-top: 15px;">
+                        <h4 style="text-align: center; margin-bottom: 20px;">Costwise Car Hire</h4>
+                        <p><em>Example: Number of offices in Sydney:  …… <strong>3</strong> ……</em></p>
+                        
+                        <ul style="list-style-type: none; padding-left: 0; line-height: 2.5;">
+                            <li>Booking reference number: <span class="q-num">1.</span> <input type="text" id="lis-q1" class="ielts-input"></li>
+                            <li>Office just by <span class="q-num">2.</span> <input type="text" id="lis-q2" class="ielts-input"> terminal.</li>
+                            <li>Opening hours: <span class="q-num">3.</span> <input type="text" id="lis-q3" class="ielts-input" style="width: 250px;"></li>
+                            <li>After-hours charge: <span class="q-num">4.</span> $<input type="text" id="lis-q4" class="ielts-input" style="width: 100px;"></li>
+                            <li>Cheapest model of car available: <span class="q-num">5.</span> <input type="text" id="lis-q5" class="ielts-input"></li>
+                            <li>Information needed when booking: <span class="q-num">6.</span> <input type="text" id="lis-q6" class="ielts-input"> number</li>
+                            <li>Length of hire period: <span class="q-num">7.</span> <input type="text" id="lis-q7" class="ielts-input"></li>
+                            <li>Reduce cost by driving under <span class="q-num">8.</span> <input type="text" id="lis-q8" class="ielts-input"> km per week.</li>
+                            <li>Insurance does not cover: <span class="q-num">9.</span> <input type="text" id="lis-q9" class="ielts-input"></li>
+                            <li>After hours put keys in box near the office on the <span class="q-num">10.</span> <input type="text" id="lis-q10" class="ielts-input"></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div id="listening-part-2" class="reading-part" style="overflow-y: auto;">
+                <div class="questions-wrapper" style="max-width: 800px; margin: 0 auto;">
+                    
+                    <div style="text-align: center; margin-bottom: 20px;">
+                        <audio controls class="audio-player" style="width: 80%;">
+                            <source src="Test2_2.mp3" type="audio/mpeg">
+                        </audio>
+                    </div>
+
+                    <h3>Questions 11-15</h3>
+                    <p>Write the correct letter, <strong>A, B or C</strong>, next to questions 11-15.</p>
+                    
+                    <div style="background: #f9f9f9; padding: 15px; margin-bottom: 20px; border: 1px solid #ddd;">
+                        <strong>Essential requirements</strong><br>
+                        A. foreign languages<br>
+                        B. willingness to travel abroad<br>
+                        C. professional qualification
+                    </div>
+
+                    <div class="qa-row"><span class="q-num">11.</span><p>conference organizer</p> <select id="lis-q11" class="ielts-select"><option value="">-</option><option value="A">A</option><option value="B">B</option><option value="C">C</option></select></div>
+                    <div class="qa-row"><span class="q-num">12.</span><p>catering manager</p> <select id="lis-q12" class="ielts-select"><option value="">-</option><option value="A">A</option><option value="B">B</option><option value="C">C</option></select></div>
+                    <div class="qa-row"><span class="q-num">13.</span><p>housekeeper</p> <select id="lis-q13" class="ielts-select"><option value="">-</option><option value="A">A</option><option value="B">B</option><option value="C">C</option></select></div>
+                    <div class="qa-row"><span class="q-num">14.</span><p>fitness centre staff</p> <select id="lis-q14" class="ielts-select"><option value="">-</option><option value="A">A</option><option value="B">B</option><option value="C">C</option></select></div>
+                    <div class="qa-row"><span class="q-num">15.</span><p>reservations assistant</p> <select id="lis-q15" class="ielts-select"><option value="">-</option><option value="A">A</option><option value="B">B</option><option value="C">C</option></select></div>
+
+                    <hr style="margin: 30px 0; border: 1px solid #eee;">
+
+                    <h3>Questions 16-20</h3>
+                    <p>Choose <strong>FIVE</strong> answers from the box and write the correct letter, <strong>A-G</strong>, next to questions 16-20.</p>
+                    
+                    <div style="background: #f9f9f9; padding: 15px; margin-bottom: 20px; border: 1px solid #ddd; columns: 2;">
+                        A. CV<br>
+                        B. names of referees<br>
+                        C. work permit<br>
+                        D. recruitment seminar<br>
+                        E. evidence of qualifications<br>
+                        F. conditions of employment<br>
+                        G. initial interview
+                    </div>
+
+                    <div style="text-align: center; font-weight: bold; margin-bottom: 15px;">INTERNATIONAL FINEST GROUP<br>RECRUITMENT PROCEDURES</div>
+                    <div style="border: 1px solid #ccc; padding: 20px; text-align: center; line-height: 2;">
+                        register interest in working for International Finest Group
+                        <br>↓<br>
+                        receive personal code and check <span class="q-num">16.</span> <select id="lis-q16" class="ielts-select"><option value="">-</option><option value="A">A</option><option value="B">B</option><option value="C">C</option><option value="D">D</option><option value="E">E</option><option value="F">F</option><option value="G">G</option></select>
+                        <br>↓<br>
+                        download application form
+                        <br>↓<br>
+                        send in form and attach <span class="q-num">17.</span> <select id="lis-q17" class="ielts-select"><option value="">-</option><option value="A">A</option><option value="B">B</option><option value="C">C</option><option value="D">D</option><option value="E">E</option><option value="F">F</option><option value="G">G</option></select>
+                        <br>↓<br>
+                        receive reply and confirm <span class="q-num">18.</span> <select id="lis-q18" class="ielts-select"><option value="">-</option><option value="A">A</option><option value="B">B</option><option value="C">C</option><option value="D">D</option><option value="E">E</option><option value="F">F</option><option value="G">G</option></select>
+                        <br>↓<br>
+                        send in <span class="q-num">19.</span> <select id="lis-q19" class="ielts-select"><option value="">-</option><option value="A">A</option><option value="B">B</option><option value="C">C</option><option value="D">D</option><option value="E">E</option><option value="F">F</option><option value="G">G</option></select>
+                        <br>↓<br>
+                        attend <span class="q-num">20.</span> <select id="lis-q20" class="ielts-select"><option value="">-</option><option value="A">A</option><option value="B">B</option><option value="C">C</option><option value="D">D</option><option value="E">E</option><option value="F">F</option><option value="G">G</option></select>
+                    </div>
+                </div>
+            </div>
+
+            <div id="listening-part-3" class="reading-part" style="overflow-y: auto;">
+                <div class="questions-wrapper" style="max-width: 800px; margin: 0 auto;">
+                    
+                    <div style="text-align: center; margin-bottom: 20px;">
+                        <audio controls class="audio-player" style="width: 80%;">
+                            <source src="Test2_3.mp3" type="audio/mpeg">
+                        </audio>
+                    </div>
+
+                    <h3>Questions 21-22</h3>
+                    <p>Choose <strong>TWO</strong> letters, <strong>A-E</strong>.</p>
+                    <p>Which TWO possible objections to a roof garden are discussed?</p>
+                    <div style="margin-left: 20px; line-height: 2;">
+                        <label><input type="checkbox" id="lis-q21a"> A. problems of access</label><br>
+                        <label><input type="checkbox" id="lis-q21b"> B. the cost of construction</label><br>
+                        <label><input type="checkbox" id="lis-q21c"> C. the time needed to install it</label><br>
+                        <label><input type="checkbox" id="lis-q21d"> D. who will look after it</label><br>
+                        <label><input type="checkbox" id="lis-q21e"> E. how to support the weight of it</label><br>
+                    </div>
+                    <em>(For auto-grading, please type the two letters you chose in any order)</em><br>
+                    <span class="q-num">21.</span> <input type="text" id="lis-q21" class="ielts-input" style="width: 50px;" maxlength="1"> 
+                    <span class="q-num">22.</span> <input type="text" id="lis-q22" class="ielts-input" style="width: 50px;" maxlength="1">
+
+                    <hr style="margin: 30px 0; border: 1px solid #eee;">
+
+                    <h3>Questions 23-24</h3>
+                    <p>Choose <strong>TWO</strong> letters, <strong>A-E</strong>.</p>
+                    <p>Which TWO recent developments in roof-garden building are mentioned?</p>
+                    <div style="margin-left: 20px; line-height: 2;">
+                        <label><input type="checkbox" id="lis-q23a"> A. waterproof barrier materials</label><br>
+                        <label><input type="checkbox" id="lis-q23b"> B. drainage systems</label><br>
+                        <label><input type="checkbox" id="lis-q23c"> C. tank designs</label><br>
+                        <label><input type="checkbox" id="lis-q23d"> D. lightweight construction materials</label><br>
+                        <label><input type="checkbox" id="lis-q23e"> E. watering systems</label><br>
+                    </div>
+                    <em>(For auto-grading, please type the two letters you chose in any order)</em><br>
+                    <span class="q-num">23.</span> <input type="text" id="lis-q23" class="ielts-input" style="width: 50px;" maxlength="1"> 
+                    <span class="q-num">24.</span> <input type="text" id="lis-q24" class="ielts-input" style="width: 50px;" maxlength="1">
+
+                    <hr style="margin: 30px 0; border: 1px solid #eee;">
+
+                    <h3>Questions 25-30</h3>
+                    <p>Label the diagram below. Write the correct letter <strong>A-H</strong> next to questions 25-30.</p>
+                    
+                    <div style="text-align: center; margin: 20px 0;">
+                        <img src="image2.jpg" alt="Light installation diagram" style="max-width: 100%; border: 1px solid #ccc; padding: 10px; background: white;">
+                    </div>
+
+                    <div style="display: flex; flex-wrap: wrap; justify-content: space-around; background: #e8f4fd; padding: 15px; border-radius: 5px;">
+                        <div class="qa-row" style="width: 45%; margin-bottom: 10px;"><span class="q-num">25.</span> wall <select id="lis-q25" class="ielts-select"><option value="">-</option><option value="A">A</option><option value="B">B</option><option value="C">C</option><option value="D">D</option><option value="E">E</option><option value="F">F</option><option value="G">G</option><option value="H">H</option></select></div>
+                        <div class="qa-row" style="width: 45%; margin-bottom: 10px;"><span class="q-num">26.</span> electric wire <select id="lis-q26" class="ielts-select"><option value="">-</option><option value="A">A</option><option value="B">B</option><option value="C">C</option><option value="D">D</option><option value="E">E</option><option value="F">F</option><option value="G">G</option><option value="H">H</option></select></div>
+                        <div class="qa-row" style="width: 45%; margin-bottom: 10px;"><span class="q-num">27.</span> fibre optic cable <select id="lis-q27" class="ielts-select"><option value="">-</option><option value="A">A</option><option value="B">B</option><option value="C">C</option><option value="D">D</option><option value="E">E</option><option value="F">F</option><option value="G">G</option><option value="H">H</option></select></div>
+                        <div class="qa-row" style="width: 45%; margin-bottom: 10px;"><span class="q-num">28.</span> wooden post <select id="lis-q28" class="ielts-select"><option value="">-</option><option value="A">A</option><option value="B">B</option><option value="C">C</option><option value="D">D</option><option value="E">E</option><option value="F">F</option><option value="G">G</option><option value="H">H</option></select></div>
+                        <div class="qa-row" style="width: 45%; margin-bottom: 10px;"><span class="q-num">29.</span> glass cap <select id="lis-q29" class="ielts-select"><option value="">-</option><option value="A">A</option><option value="B">B</option><option value="C">C</option><option value="D">D</option><option value="E">E</option><option value="F">F</option><option value="G">G</option><option value="H">H</option></select></div>
+                        <div class="qa-row" style="width: 45%;"><span class="q-num">30.</span> acrylic rod <select id="lis-q30" class="ielts-select"><option value="">-</option><option value="A">A</option><option value="B">B</option><option value="C">C</option><option value="D">D</option><option value="E">E</option><option value="F">F</option><option value="G">G</option><option value="H">H</option></select></div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="listening-part-4" class="reading-part" style="overflow-y: auto;">
+                <div class="questions-wrapper" style="max-width: 800px; margin: 0 auto;">
+                    
+                    <div style="text-align: center; margin-bottom: 20px;">
+                        <audio controls class="audio-player" style="width: 80%;">
+                            <source src="Test2_4.mp3" type="audio/mpeg">
+                        </audio>
+                    </div>
+
+                    <h3>Questions 31-36</h3>
+                    <p>Write <strong>NO MORE THAN TWO WORDS</strong> for each answer.</p>
+                    
+                    <div style="background: #fdfdfd; padding: 20px; border: 1px solid #ccc; border-radius: 5px; margin-top: 15px;">
+                        <h4 style="margin-bottom: 10px;">The Argus system</h4>
+                        <ul style="list-style-type: disc; margin-left: 20px; line-height: 2;">
+                            <li>Developed by Rob Holman in N. Carolina with other researchers.</li>
+                            <li>Research is vital for understanding of <span class="q-num">31.</span> <input type="text" id="lis-q31" class="ielts-input">.</li>
+                            <li>Matches information from under the water with information from <span class="q-num">32.</span> <input type="text" id="lis-q32" class="ielts-input">.</li>
+                            <li>According to S. Jeffress Williams, useful because can make observations during a <span class="q-num">33.</span> <input type="text" id="lis-q33" class="ielts-input">.</li>
+                        </ul>
+
+                        <h4 style="margin-top: 20px; margin-bottom: 10px;">Dr Holman’s sand collection</h4>
+                        <ul style="list-style-type: disc; margin-left: 20px; line-height: 2;">
+                            <li>Dr H. has samples from every <span class="q-num">34.</span> <input type="text" id="lis-q34" class="ielts-input">.</li>
+                            <li>Used in teaching students of <span class="q-num">35.</span> <input type="text" id="lis-q35" class="ielts-input">.</li>
+                            <li>e.g. US East Coast display: grains from south are small, light-coloured and <span class="q-num">36.</span> <input type="text" id="lis-q36" class="ielts-input"> in shape.</li>
+                        </ul>
+                    </div>
+
+                    <hr style="margin: 30px 0; border: 1px solid #eee;">
+
+                    <h3>Questions 37-40</h3>
+                    <p>Complete the flow-chart below. Write <strong>NO MORE THAN THREE WORDS</strong> for each answer.</p>
+                    
+                    <div style="text-align: center; font-weight: bold; margin-bottom: 15px;">Taking samples when travelling</div>
+                    <div style="border: 1px solid #ccc; padding: 20px; text-align: center; line-height: 2; margin-bottom: 20px;">
+                        to dig sand, a plastic or metal <span class="q-num">37.</span> <input type="text" id="lis-q37" class="ielts-input"> is ideal
+                        <br>↓<br>
+                        store in plastic bags
+                        <br>↓<br>
+                        write date and place, using a <span class="q-num">38.</span> <input type="text" id="lis-q38" class="ielts-input">
+                    </div>
+
+                    <div style="text-align: center; font-weight: bold; margin-bottom: 15px;">After reaching home</div>
+                    <div style="border: 1px solid #ccc; padding: 20px; text-align: center; line-height: 2;">
+                        log samples, noting location including which part of beach
+                        <br>↓<br>
+                        Dry sample on <span class="q-num">39.</span> <input type="text" id="lis-q39" class="ielts-input">
+                        <br>↓<br>
+                        transfer to container
+                        <br>↓<br>
+                        add at least one <span class="q-num">40.</span> <input type="text" id="lis-q40" class="ielts-input"> immediately
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+        <!-- ================= READING SECTION ================= -->
+<!-- ================= READING SECTION ================= -->
+        <section id="reading-section" class="skill-section">
+            
+            <!-- Thanh điều hướng Passage -->
+            <div class="reading-parts-nav">
+                <button class="part-btn active" onclick="switchReadingPart(1)">Passage 1</button>
+                <button class="part-btn" onclick="switchReadingPart(2)">Passage 2</button>
+                <button class="part-btn" onclick="switchReadingPart(3)">Passage 3</button>
+            </div>
+
+            <!-- ================= NỘI DUNG PASSAGE 1 ================= -->
+            <div id="reading-part-1" class="reading-part active">
+                <div class="split-layout">
+                    <!-- Bên trái: Văn bản đọc -->
+                    <div class="reading-passage">
+                        <h2>READING PASSAGE 1</h2>
+                        <h3>Anxiety</h3>
+                        <p>Anxiety is a common experience that can be a useful motivator or even lifesaver in situations that are objectively dangerous. However, when the anxiety is out of proportion to the danger inherent in a given situation, is persistent and is markedly disabling, an anxiety disorder can be developed.</p>
+                        <p>Anxiety is an emotion that all people experience from time to time, and we do that for very good reasons. It has been built into us; we have inherited it from our evolutionary past, because, in general, anxiety has a survival function. If there is a real danger for a primitive man, then anxiety kicks in in an adaptive way. We freeze, we stop doing whatever we were doing, we devote all of your attention to the danger, and our bodies react with a big release of adrenalin, an increase in blood flow to the muscles, getting us ready to run as fast as we can or fight as fiercely as we can.</p>
+                        <p>So some anxiety is adaptive, not only for primitive man, but in modern society as well. It helps us to focus on things when we have deadlines and, if someone is driving too fast when we cross the road, it helps us to jump out of the way quickly. So, there is nothing wrong with anxiety in general, and in fact, we would have difficulties if we did not experience it to some extent, but of course it can get problematic if the danger is one that is imagined rather than real, or the danger is something that is exaggerated. In those cases, particularly if the perceived danger is out of proportion to the real danger, and it is persistent and disabling, then there is a danger of an anxiety disorder. About 17 per cent of the population will have an anxiety disorder at some stage in their life.</p>
+                        <p>Anxiety can be caused in a variety of different ways, but any mental disorder is always difficult to diagnose. Scientists are looking at what role genes play in the development of these disorders and are also investigating the effects of environmental factors, such as pollution, physical and psychological stress, and diet. Several parts of the brain are key actors in the production of fear and anxiety. Using brain imaging technology and neurochemical techniques, scientists have discovered that the amygdala plays a significant role in most anxiety disorders. By learning more about how the brain creates fear and anxiety, scientists may be able to devise better treatments for these disorders.</p>
+                        <p>Anxiety disorders are a very costly problem in terms of society. Some published figures show that, in the US, it cost $60 billion in one year in terms of lost productivity and in terms of excessive medical investigations that many people with anxiety seek, often thinking they have a physical problem.</p>
+                        <p>Given all of this, it is rather worrying that anxiety also has a rather low treatment-seeking rate. Only 10 per cent of people with an anxiety disorder will seek treatment. That seems to be largely because people do not realise there are effective treatments available. Most people tend to think they have had it for most of their lives, so it is just their personality and they cannot change their personality, and so they feel rather hopeless about it.</p>
+                        <p>The first psychotherapy treatment that was shown to be effective was exposure therapy, which essentially encourages people in a graded way to go into their feared situations and stay in them as long as they can and build up their confidence that way. Often, the therapist will accompany the person to a feared situation to provide support and guidance. Group cognitive behaviour therapy has also been shown to be effective. This is a talking therapy that helps people to understand the link between negative thoughts and mood and how altering their behaviour can enable them to manage anxiety and feel in control.</p>
+                        <p>There are, of course, drugs that can help people with anxiety. Medication will not cure an anxiety disorder, but it can keep it under control while the person receives psychotherapy. The principal medications used for anxiety disorders are antidepressants, anti-anxiety drugs, and beta-blockers to control some of the physical symptoms. With proper treatment, many people with anxiety disorders can lead normal, fulfilling lives.</p>
+                        <p>There is plenty of evidence that exercise can help with anxiety problems. When stress affects the brain, with its many nerve connections, the rest of the body feels the impact as well. Exercise and other physical activity produce endorphins, which are chemicals in the brain that act as natural painkillers. In addition to this, getting physically tired can help people fall asleep faster and have deeper and more relaxing sleep. As many people suffering from anxiety often have problems with insomnia, just the ability to get a good night’s rest can change people’s whole perspectives.</p>
+                        <p>Anxiety is a normal, but highly subjective, human emotion. While normal anxiety serves a beneficial and adaptive purpose, anxiety can also become the cause of tremendous suffering for millions of people. It is important that people recognise excessive anxiety in themselves as soon as possible, as treatment can be very successful and living untreated can be a misery.</p>
+                    </div>
+                    
+                    <!-- Bên phải: Câu hỏi Passage 1 -->
+                    <div class="reading-questions">
+                        <h3>Questions 1-3</h3>
+                        <p>Write the correct letter (<strong>A – E</strong>) in answer boxes 1-3 on your answer sheet.</p>
+                        <div style="background: #f9f9f9; padding: 10px; margin-bottom: 15px; border: 1px solid #ddd; line-height: 1.8;">
+                            A. be very beneficial.<br>
+                            B. never have to deal with anxiety.<br>
+                            C. lead to unhelpful levels of anxiety.<br>
+                            D. experience anxiety at some point.<br>
+                            E. increase the possibility of physical disease.
+                        </div>
+                        
+                        <div class="qa-row"><span class="q-num">1.</span><p>Experiencing small doses of anxiety can</p>
+                            <select id="read-q1" class="ielts-select"><option value="">-</option><option value="A">A</option><option value="B">B</option><option value="C">C</option><option value="D">D</option><option value="E">E</option></select>
+                        </div>
+                        <div class="qa-row"><span class="q-num">2.</span><p>Imagining or exaggerating problems can</p>
+                            <select id="read-q2" class="ielts-select"><option value="">-</option><option value="A">A</option><option value="B">B</option><option value="C">C</option><option value="D">D</option><option value="E">E</option></select>
+                        </div>
+                        <div class="qa-row"><span class="q-num">3.</span><p>Nearly one in five people can</p>
+                            <select id="read-q3" class="ielts-select"><option value="">-</option><option value="A">A</option><option value="B">B</option><option value="C">C</option><option value="D">D</option><option value="E">E</option></select>
+                        </div>
+
+                        <hr style="margin: 20px 0; border: 1px solid #eee;">
+
+                        <h3>Questions 4-6</h3>
+                        <p>Answer the questions below. Write <strong>NO MORE THAN THREE WORDS AND/OR A NUMBER</strong> from the text for each answer.</p>
+                        
+                        <div class="qa-row"><span class="q-num">4.</span><p>Which area of the brain have scientists identified as being significant in anxiety problems?</p></div>
+                        <input type="text" id="read-q4" class="ielts-input" style="width: 100%; margin-bottom: 15px;">
+                        
+                        <div class="qa-row"><span class="q-num">5.</span><p>What proportion of people look for treatment for their anxiety?</p></div>
+                        <input type="text" id="read-q5" class="ielts-input" style="width: 100%; margin-bottom: 15px;">
+                        
+                        <div class="qa-row"><span class="q-num">6.</span><p>What part of themselves do most people blame for their anxiety?</p></div>
+                        <input type="text" id="read-q6" class="ielts-input" style="width: 100%; margin-bottom: 15px;">
+
+                        <hr style="margin: 20px 0; border: 1px solid #eee;">
+
+                        <h3>Questions 7-13</h3>
+                        <p>Complete the table below. Write <strong>NO MORE THAN TWO WORDS</strong> from the text for each answer.</p>
+                        
+                        <table style="width: 100%; border-collapse: collapse; margin-top: 15px; background: white;">
+                            <thead>
+                                <tr style="background-color: #2c3e50; color: white;">
+                                    <th colspan="2" style="padding: 10px; border: 1px solid #ccc; text-align: center;">Treatment for Anxiety</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td style="padding: 10px; border: 1px solid #ccc; width: 35%; font-weight: bold;">Exposure Therapy</td>
+                                    <td style="padding: 10px; border: 1px solid #ccc;">Patients face their fears in a <span class="q-num">7.</span> <input type="text" id="read-q7" class="ielts-input"> fashion, often with their <span class="q-num">8.</span> <input type="text" id="read-q8" class="ielts-input"></td>
+                                </tr>
+                                <tr>
+                                    <td style="padding: 10px; border: 1px solid #ccc; font-weight: bold;">Group Cognitive Behaviour Therapy</td>
+                                    <td style="padding: 10px; border: 1px solid #ccc;">A talking therapy.<br>It explores the links between <span class="q-num">9.</span> <input type="text" id="read-q9" class="ielts-input"> and feelings.<br>It explores how changing people's <span class="q-num">10.</span> <input type="text" id="read-q10" class="ielts-input"> can help them regain control.</td>
+                                </tr>
+                                <tr>
+                                    <td style="padding: 10px; border: 1px solid #ccc; font-weight: bold;">Drugs</td>
+                                    <td style="padding: 10px; border: 1px solid #ccc;">These cannot cure people, but they can help in conjunction with <span class="q-num">11.</span> <input type="text" id="read-q11" class="ielts-input">.</td>
+                                </tr>
+                                <tr>
+                                    <td style="padding: 10px; border: 1px solid #ccc; font-weight: bold;">Exercise</td>
+                                    <td style="padding: 10px; border: 1px solid #ccc;">By creating <span class="q-num">12.</span> <input type="text" id="read-q12" class="ielts-input">, the body can help dull the pain of anxiety.<br>It can allow a good sleep for people who suffer from the <span class="q-num">13.</span> <input type="text" id="read-q13" class="ielts-input"> caused by their anxiety.</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ================= NỘI DUNG PASSAGE 2 ================= -->
+            <div id="reading-part-2" class="reading-part">
+                <div class="split-layout">
+                    <div class="reading-passage">
+                        <h2>READING PASSAGE 2</h2>
+                        <h3>The Grand Banks</h3>
+                        <p><strong>Paragraph A</strong><br>The Grand Banks is a large area of submerged highlands southeast of Newfoundland and east of the Laurentian Channel on the North American continental shelf. Covering 93,200 square kilometres, the Grand Banks are relatively shallow, ranging from 25 to 100 meters in depth. It is in this area that the cold Labrador Current mixes with the warm waters of the Gulf Stream. The mixing of these waters and the shape of the ocean bottom lifts nutrients to the surface and these conditions created one of the richest fishing grounds in the world. Extensive marine life flourishes in the Grand Banks, whose range extends beyond the Canadian 200-mile exclusive economic zone (EEZ) and into international waters. This has made it an important part of both the Canadian and the high seas fisheries, with fishermen risking their lives in the extremely inhospitable environment consisting of rogue waves, fog, icebergs, sea ice, hurricanes, winter storms and earthquakes.</p>
+                        <p><strong>Paragraph B</strong><br>While the area’s ‘official’ discovery is credited to John Cabot in 1497, English and Portuguese vessels are known to have first sought out these waters prior to that, based upon reports they received from earlier Viking voyages to Newfoundland. Several navigators, including Basque fishermen, are known to have fished these waters in the fifteenth century. Some texts from that era refer to a land called Bacalao, ‘the land of the codfish’, which is possibly Newfoundland. However, it was not until John Cabot noted the waters’ abundance of sea life that the existence of these fishing grounds became widely known in Europe. Soon, fishermen and merchants from France, Spain, Portugal and England developed seasonal inshore fisheries producing for European markets. Known as ‘dry’ fishery, cod were split, salted, and dried on shore over the summer before crews returned to Europe. The French pioneered ‘wet’ or ‘green’ fishery on the Grand Banks proper around 1550, heavily salting the cod on board and immediately returning home.</p>
+                        <p><strong>Paragraph C</strong><br>The Grand Banks were possibly the world’s most important international fishing area in the nineteenth and twentieth centuries. Technological advances in fishing, such as sonar and large factory ships, including the massive factory freezer trawlers introduced in the 1950’s, led to overfishing and a serious decline in the fish stocks. Based upon the many foreign policy agreements Newfoundland had entered into prior to its admittance into the Canadian Confederation, foreign fleets, some from as far away as Russia, came to the Grand Banks in force, catching unprecedented quantities of fish.</p>
+                        <p><strong>Paragraph D</strong><br>Between 1973 and 1982, the United Nations and its member states negotiated the Third Convention of the Law of the Sea, one component of which was the concept of nations being allowed to declare an EEZ. Many nations worldwide-declared 200-nautical mile EEZ’s, including Canada and the United States. On the whole, the EEZ was very well received by fishermen in eastern Canada, because it meant they could fish unhindered out to the limit without fear of competing with the foreign fleets. During the late 1970’s and early 1980s, Canada’s domestic offshore fleet grew as fishermen and fish processing companies rushed to take advantage. It was during this time that it was noticed that the foreign fleets now pushed out to areas of the Grand Banks off Newfoundland outside the Canadian EEZ. By the late 1980’s, dwindling catches of Atlantic cod were being reported throughout Newfoundland and eastern Canada, and the federal government and citizens of coastal regions in the area began to face the reality that the domestic and foreign overfishing had taken its toll. The Canadian government was finally forced to take drastic action in 1992, when a total moratorium was declared indefinitely for the northern cod.</p>
+                        <p><strong>Paragraph E</strong><br>Over the last ten years, it has been noted that cod appear to be returning to the Grand Banks in small numbers. The reasons for this fragile recovery are still unknown. Perhaps, the damage done by trawlers is not permanent and the marine fauna and ecosystems can rebuild themselves if given a prolonged period of time without any commercial activity. Either way, the early stage recovery of the Grand Banks is encouraging news, but caution is needed, as, after nearly twenty years of severe limitations, cod stocks are still only at approximately ten per cent of 1960’s levels. It is hoped that in another ten to twenty years, stocks may be close to a full recovery, although this would require political pressure to maintain strict limitations on commercial fishing. If cod do come back to the Grand Banks in meaningful numbers, it is to be hoped that the Canadians will not make the same mistakes again.</p>
+                        <p><strong>Paragraph F</strong><br>Further riches have now been found in the Grand Banks. Petroleum reserves have been discovered and a number of oil fields are under development in the region. The vast Hibernia oil field was discovered in 1979, and, following several years of aborted start-up attempts, the Hibernia megaproject began construction of the production platform and gravity base structures in the early 1990’s. Production commenced on November 17, 1997, with initial production rates in excess of 50,000 barrels of crude oil per day from a single well. Hibernia has proven to be the most prolific oil well in Canada. However, earthquake and iceberg activity in the Grand Banks pose a potential ecological disaster that could devastate the fishing grounds that are only now starting to recover.</p>
+                    </div>
+                    <div class="reading-questions">
+                        <h3>Questions 14-20</h3>
+                        <p>Which paragraph contains the following information?<br>Write your answers <strong>A-F</strong> in boxes 14-20 on your answer sheet.</p>
+                        
+                        <div class="qa-row"><span class="q-num">14.</span><p>Many countries could legally fish Newfoundland waters because of treaties Newfoundland had made before becoming part of Canada.</p>
+                            <select id="read-q14" class="ielts-select"><option value="">-</option><option value="A">A</option><option value="B">B</option><option value="C">C</option><option value="D">D</option><option value="E">E</option><option value="F">F</option></select>
+                        </div>
+                        <div class="qa-row"><span class="q-num">15.</span><p>The establishment of the EEZ did not stop over-fishing in the Grand Banks.</p>
+                            <select id="read-q15" class="ielts-select"><option value="">-</option><option value="A">A</option><option value="B">B</option><option value="C">C</option><option value="D">D</option><option value="E">E</option><option value="F">F</option></select>
+                        </div>
+                        <div class="qa-row"><span class="q-num">16.</span><p>Natural disasters could cause oil to destroy what is left of the Grand Banks ecosystem.</p>
+                            <select id="read-q16" class="ielts-select"><option value="">-</option><option value="A">A</option><option value="B">B</option><option value="C">C</option><option value="D">D</option><option value="E">E</option><option value="F">F</option></select>
+                        </div>
+                        <div class="qa-row"><span class="q-num">17.</span><p>The original amount of fish in the Grand Banks was due to different temperature waters mixing.</p>
+                            <select id="read-q17" class="ielts-select"><option value="">-</option><option value="A">A</option><option value="B">B</option><option value="C">C</option><option value="D">D</option><option value="E">E</option><option value="F">F</option></select>
+                        </div>
+                        <div class="qa-row"><span class="q-num">18.</span><p>East Canadian fishermen were generally happy with the establishment of the Canadian EEZ.</p>
+                            <select id="read-q18" class="ielts-select"><option value="">-</option><option value="A">A</option><option value="B">B</option><option value="C">C</option><option value="D">D</option><option value="E">E</option><option value="F">F</option></select>
+                        </div>
+                        <div class="qa-row"><span class="q-num">19.</span><p>Grand Banks’ cod stocks are still 90 per cent lower than what they were in the 1960’s.</p>
+                            <select id="read-q19" class="ielts-select"><option value="">-</option><option value="A">A</option><option value="B">B</option><option value="C">C</option><option value="D">D</option><option value="E">E</option><option value="F">F</option></select>
+                        </div>
+                        <div class="qa-row"><span class="q-num">20.</span><p>The French were the first to prepare the cod on board their ships before going back to France.</p>
+                            <select id="read-q20" class="ielts-select"><option value="">-</option><option value="A">A</option><option value="B">B</option><option value="C">C</option><option value="D">D</option><option value="E">E</option><option value="F">F</option></select>
+                        </div>
+
+                        <hr style="margin: 20px 0; border: 1px solid #eee;">
+
+                        <h3>Questions 21-23</h3>
+                        <p>Choose the correct letter <strong>A, B, C or D</strong>.</p>
+                        
+                        <div class="qa-row"><span class="q-num">21.</span><p>The first English fishermen to come to the Grand Banks to fish...</p>
+                            <select id="read-q21" class="ielts-select"><option value="">-</option><option value="A">A</option><option value="B">B</option><option value="C">C</option><option value="D">D</option></select>
+                        </div>
+                        <div style="font-size: 13px; margin-left: 30px; margin-bottom: 15px; color: #555;">
+                            A. were told about the fishery by Basque fishermen.<br>
+                            B. were sent word about the fishery from the first American colonists.<br>
+                            C. acted on information from previous Viking expeditions.<br>
+                            D. discovered the fishery themselves while exploring.
+                        </div>
+
+                        <div class="qa-row"><span class="q-num">22.</span><p>John Cabot’s reports of the Grand Banks...</p>
+                            <select id="read-q22" class="ielts-select"><option value="">-</option><option value="A">A</option><option value="B">B</option><option value="C">C</option><option value="D">D</option></select>
+                        </div>
+                        <div style="font-size: 13px; margin-left: 30px; margin-bottom: 15px; color: #555;">
+                            A. led to the establishment of the Canadian EEZ.<br>
+                            B. meant the fishery was well known in Europe.<br>
+                            C. led to fighting between rival fishing fleets.<br>
+                            D. were not immediately publicised, so that English fishermen could benefit.
+                        </div>
+
+                        <div class="qa-row"><span class="q-num">23.</span><p>The establishment of the Canadian EEZ...</p>
+                            <select id="read-q23" class="ielts-select"><option value="">-</option><option value="A">A</option><option value="B">B</option><option value="C">C</option><option value="D">D</option></select>
+                        </div>
+                        <div style="font-size: 13px; margin-left: 30px; margin-bottom: 15px; color: #555;">
+                            A. did not stop foreign fishermen from fishing the Grand Banks.<br>
+                            B. was not ratified by the United Nations.<br>
+                            C. temporarily stopped the over-fishing of cod in the Grand Banks.<br>
+                            D. meant Canadian fishermen were excluded from fishing the Grand Banks.
+                        </div>
+
+                        <hr style="margin: 20px 0; border: 1px solid #eee;">
+
+                        <h3>Questions 24-26</h3>
+                        <p>Do the following statements agree with the information given in the text? Write <strong>TRUE</strong>, <strong>FALSE</strong>, or <strong>NOT GIVEN</strong>.</p>
+                        
+                        <div class="qa-row"><span class="q-num">24.</span><p>Even now, cod stocks have shown no signs of recovery in the Grand Banks.</p>
+                            <select id="read-q24" class="ielts-select"><option value="">-</option><option value="TRUE">TRUE</option><option value="FALSE">FALSE</option><option value="NOT GIVEN">NOT GIVEN</option></select>
+                        </div>
+                        <div class="qa-row"><span class="q-num">25.</span><p>Initial efforts to extract oil from the Grand Banks’ Hibernia oil field were unsuccessful.</p>
+                            <select id="read-q25" class="ielts-select"><option value="">-</option><option value="TRUE">TRUE</option><option value="FALSE">FALSE</option><option value="NOT GIVEN">NOT GIVEN</option></select>
+                        </div>
+                        <div class="qa-row"><span class="q-num">26.</span><p>Oil exploration companies have to follow strict safety controls imposed by the Canadian government.</p>
+                            <select id="read-q26" class="ielts-select"><option value="">-</option><option value="TRUE">TRUE</option><option value="FALSE">FALSE</option><option value="NOT GIVEN">NOT GIVEN</option></select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ================= NỘI DUNG PASSAGE 3 ================= -->
+            <div id="reading-part-3" class="reading-part">
+                <div class="split-layout">
+                    <div class="reading-passage">
+                        <h2>READING PASSAGE 3</h2>
+                        <h3>An Aging Population</h3>
+                        <p>People are living longer and, in some parts of the world, healthier lives. This represents one of the crowning achievements of the last century, but also a significant challenge. Longer lives must be planned for. Societal aging may affect economic growth and lead to many other issues, including the sustainability of families, the ability of states and communities to provide resources for older citizens, and international relations. The Global Burden of Disease, a study conducted by the World Health Organization, predicts a very large increase in age-related chronic disease in all regions of the world. Dealing with this will be a significant challenge for all countries’ health services.</p>
+                        <p>Population aging is driven by declines in fertility and improvements in health and longevity. In more developed countries, falling fertility beginning in the early 1900’s has resulted in current levels being below the population replacement rate of two live births per woman. Perhaps the most surprising demographic development of the past 20 years has been the pace of fertility decline in many less developed countries. In 2006, for example, the total fertility rate was at or below the replacement rate in 44 less developed countries.</p>
+                        <p>One central issue for policymakers in regard to pension funds is the relationship between the official retirement age and actual retirement age. Over several decades in the latter part of the 20th century, many of the more developed nations lowered the official age at which people become fully entitled to public pension benefits. This was propelled by general economic conditions, changes in welfare philosophy, and private pension trends. Despite the recent trend toward increased workforce participation at older ages, a significant gap between official and actual ages of retirement persists. This trend is emerging in rapidly aging developing countries as well. Many countries already have taken steps towards much-needed reform of their old-age social insurance programs. One common reform has been to raise the age at which workers are eligible for full public pension benefits. Another strategy for bolstering economic security for older people has been to increase the contributions by workers. Other measures to enhance income for older people include new financial instruments for private savings, tax incentives for individual retirement savings, and supplemental occupational pension plans.</p>
+                        <p>As life expectancy increases in most nations, so do the odds of different generations within a family coexisting. In more developed countries, this has manifested itself as the ‘beanpole family,’ a vertical extension of family structure characterised by an increase in the number of living generations within a lineage and a decrease in the number of people within each generation. As mortality rates continue to improve, more people in their 50’s and 60’s will have surviving parents, aunts, and uncles. Consequently, more children will know their grandparents and even their great-grandparents, especially their great-grandmothers. There is no historical precedent for a majority of middle-aged and older adults having living parents.</p>
+                        <p>As the World Health Organisation study, The Global Burden of Disease, predicts that in a few decades the loss of health and life worldwide will be greater from non-communicable or chronic diseases than from infectious diseases, childhood diseases, and accidents. The study estimates that today, noncommunicable diseases account for 85 per cent of the burden of disease in high-income countries and a surprising 44 per cent of the burden of disease in low- and middle-income countries. Noncommunicable diseases already account for as much of the burden of disease in low- and middleincome countries as all communicable diseases, maternal and perinatal conditions, and nutritional conditions. By 2030, according to projections, the share of the burden attributed to noncommunicable diseases in low- and middle-income countries will reach 54 per cent, while the share attributed to communicable diseases will fall to 32 per cent. If we restrict attention to older ages, noncommunicable diseases already account for more than 87 per cent of the burden for the over-60 population in low-, middle-, and high-income countries. The critical issue for low- and middle-income countries is how to mobilise and allocate resources to address non-communicable diseases, as they continue to struggle with the continued high prevalence of communicable diseases.</p>
+                        <p>Of course, a significant jump in disability numbers has accompanied the increase in longevity. Because countries age at different paces, it is possible for the elements of production – labour and capital – to flow across national boundaries and mitigate the impact of population aging. Studies predict that, in the near term, surplus capital will flow from Europe and North America to emerging markets in Asia and Latin America, where the population is younger and cheaper and supplies of capital relatively low. In another 20 years, when the baby boom generation in the West has mostly retired, capital will most likely flow in the opposite direction. However, these studies rest on the uncertain assumption that capital will flow easily across national boundaries.</p>
+                        <p>Despite the weight of scientific evidence, the significance of population aging and its global implications have yet to be wholly appreciated. There is a need to raise awareness about not only global aging issues, but also the importance of rigorous cross-national scientific research and policy dialogue that will help us address the challenges and opportunities of an aging world. Preparing financially for longer lives and finding ways to reduce aging-related disability should become national and global priorities. Experience shows that for nations, as for individuals, it is critical to address problems sooner rather than later. Waiting significantly increases the costs and difficulties of addressing these challenges.</p>
+                    </div>
+                    <div class="reading-questions">
+                        <h3>Questions 27-33</h3>
+                        <p>Write <strong>NO MORE THAN THREE WORDS</strong> for each answer.</p>
+                        
+                        <div style="background: #fdfdfd; padding: 15px; border: 1px solid #ddd; line-height: 2.2;">
+                            <h4 style="text-align: center; margin-bottom: 10px;">An Aging Population</h4>
+                            <p>The longer lives of people of today must be prepared for. The longer lives will affect economics, family life, old age care and health services.</p>
+                            <p>The aging population has been caused by a drop in fertility, improvements in health and <span class="q-num">27.</span> <input type="text" id="read-q27" class="ielts-input">; the former is surprisingly seen in many <span class="q-num">28.</span> <input type="text" id="read-q28" class="ielts-input">.</p>
+                            <p>One key area to consider is the age for retirement benefits to be paid – this has changed a lot recently in <span class="q-num">29.</span> <input type="text" id="read-q29" class="ielts-input">, due to various conditions and trends.</p>
+                            <p>A lot of <span class="q-num">30.</span> <input type="text" id="read-q30" class="ielts-input"> is required in many countries and some have already done this – usually by raising the official pension age or raising the <span class="q-num">31.</span> <input type="text" id="read-q31" class="ielts-input"> of people still working. Other new financial instruments have also been launched.</p>
+                            <p>Longer life expectancy will also lead to different family <span class="q-num">32.</span> <input type="text" id="read-q32" class="ielts-input"> living with each other more. There has been no previous <span class="q-num">33.</span> <input type="text" id="read-q33" class="ielts-input"> of such a change in family demographics.</p>
+                        </div>
+
+                        <hr style="margin: 20px 0; border: 1px solid #eee;">
+
+                        <h3>Questions 34-39</h3>
+                        <p>Do the following statements agree with the views of the writer of the text? Write <strong>YES</strong>, <strong>NO</strong>, or <strong>NOT GIVEN</strong>.</p>
+                        
+                        <div class="qa-row"><span class="q-num">34.</span><p>It is no shock that low- and middle-income countries have experienced a significant rise in non-communicable diseases.</p>
+                            <select id="read-q34" class="ielts-select"><option value="">-</option><option value="YES">YES</option><option value="NO">NO</option><option value="NOT GIVEN">NOT GIVEN</option></select>
+                        </div>
+                        <div class="qa-row"><span class="q-num">35.</span><p>While the numbers of people with chronic diseases have increased around the world, the numbers of people with disability problems have reduced.</p>
+                            <select id="read-q35" class="ielts-select"><option value="">-</option><option value="YES">YES</option><option value="NO">NO</option><option value="NOT GIVEN">NOT GIVEN</option></select>
+                        </div>
+                        <div class="qa-row"><span class="q-num">36.</span><p>It is theorised that money invested short-term in Asia will later be reinvested back in the West.</p>
+                            <select id="read-q36" class="ielts-select"><option value="">-</option><option value="YES">YES</option><option value="NO">NO</option><option value="NOT GIVEN">NOT GIVEN</option></select>
+                        </div>
+                        <div class="qa-row"><span class="q-num">37.</span><p>It is predicted that problems in the international flow of capital will lead to armed conflict between some countries.</p>
+                            <select id="read-q37" class="ielts-select"><option value="">-</option><option value="YES">YES</option><option value="NO">NO</option><option value="NOT GIVEN">NOT GIVEN</option></select>
+                        </div>
+                        <div class="qa-row"><span class="q-num">38.</span><p>All the effects of population aging around the world have still not been fully realised.</p>
+                            <select id="read-q38" class="ielts-select"><option value="">-</option><option value="YES">YES</option><option value="NO">NO</option><option value="NOT GIVEN">NOT GIVEN</option></select>
+                        </div>
+                        <div class="qa-row"><span class="q-num">39.</span><p>It would be better to wait a while to see how the situation develops, as fast decisions could create problems in the future.</p>
+                            <select id="read-q39" class="ielts-select"><option value="">-</option><option value="YES">YES</option><option value="NO">NO</option><option value="NOT GIVEN">NOT GIVEN</option></select>
+                        </div>
+
+                        <hr style="margin: 20px 0; border: 1px solid #eee;">
+
+                        <h3>Question 40</h3>
+                        <p>Choose the correct letter, <strong>A, B, C or D</strong>.</p>
+                        <div class="qa-row"><span class="q-num">40.</span><p>What is the writer’s purpose in Reading Passage 3?</p>
+                            <select id="read-q40" class="ielts-select"><option value="">-</option><option value="A">A</option><option value="B">B</option><option value="C">C</option><option value="D">D</option></select>
+                        </div>
+                        <div style="font-size: 13px; margin-left: 30px; margin-bottom: 15px; color: #555;">
+                            A. To provide suggestions on how developed countries can deal with their aging populations.<br>
+                            B. To provide an overview of the causes and effects of the world’s aging population.<br>
+                            C. To provide potential suggestions on how to prevent the world’s aging population from increasing.<br>
+                            D. To provide a historical analysis of the causes of today’s aging population.
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+        <section id="writing-section" class="skill-section">
+            <div class="split-layout">
+                <div class="writing-prompt">
+                    <h2>WRITING TASK 2</h2>
+                    <p>You should spend about 40 minutes on this task.</p>
+                    <p class="prompt-text">
+                        <strong>Nowadays young people are admiring media and sports stars, even though they do not set a good example. Do you think this is a positive or negative development?</strong>
+                    </p>
+                    <p>Write at least 250 words.</p>
+                </div>
+                
+                <div class="writing-area">
+                    <h3>Submit Your Essay Below</h3>
+                    <p style="color: #666; font-size: 13px; margin-bottom: 10px;">
+                        * Điền thông tin và viết bài trực tiếp vào biểu mẫu dưới đây để gửi bài cho giáo viên.
+                    </p>
+                    
+                    <div class="iframe-container">
+                        <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSfD_Xg6k4B_pW1T3jZ6H6u4Y7NfXg3W7G9X7z-J_xxxxxxxxx/viewform?embedded=true" width="100%" height="100%" frameborder="0" marginheight="0" marginwidth="0">Đang tải biểu mẫu...</iframe>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <div id="result-modal" class="modal">
+        <div class="modal-content">
+            <h2>Test 1 - Results Summary</h2>
+            <div class="score-line">Listening Score: <strong id="score-listening">0/40</strong></div>
+            <div class="score-line">Reading Score: <strong id="score-reading">0/40</strong></div>
+            <p class="modal-note">Lưu ý: Phần bài Writing sẽ do giáo viên chấm điểm trực tiếp trên hệ thống dữ liệu riêng.</p>
+            <button class="close-btn" onclick="closeModal()">Review Answers</button>
+        </div>
+    </div>
+
+    <script>
+        const CURRENT_TEST_ID = "TEST_2"; 
+    </script>
+    
+    <script src="script.js"></script>
+</body>
+</html>

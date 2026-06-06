@@ -1,0 +1,304 @@
+/* Tái tạo phong cách tối giản, tập trung của bài thi IELTS Computer-delivered */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-color: #f4f5f7;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    overflow: hidden;
+}
+
+/* Header */
+.ielts-header {
+    background-color: #2c3e50;
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    height: 50px;
+}
+
+.test-title {
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.timer-container {
+    background-color: #1a252f;
+    padding: 5px 15px;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+.timer-label {
+    color: #bdc3c7;
+    margin-right: 5px;
+}
+
+#timer {
+    color: #e74c3c;
+    font-weight: bold;
+}
+
+.exit-btn {
+    background-color: #e74c3c;
+    color: white;
+    border: none;
+    padding: 6px 12px;
+    cursor: pointer;
+    border-radius: 4px;
+    font-weight: bold;
+}
+
+.exit-btn:hover {
+    background-color: #c0392b;
+}
+
+/* Navigation tabs */
+.skill-nav {
+    background-color: #ecf0f1;
+    display: flex;
+    border-bottom: 2px solid #bdc3c7;
+    height: 40px;
+}
+
+.nav-tab {
+    background: none;
+    border: none;
+    padding: 0 25px;
+    height: 100%;
+    font-size: 14px;
+    font-weight: bold;
+    color: #7f8c8d;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.nav-tab.active {
+    background-color: #fff;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+}
+
+/* Main Container */
+.test-container {
+    flex: 1;
+    overflow: hidden;
+    position: relative;
+    background-color: #fff;
+}
+
+.skill-section {
+    display: none;
+    height: 100%;
+    padding: 20px;
+    overflow-y: auto;
+}
+
+.skill-section.active {
+    display: block;
+}
+
+/* Layouts chia đôi màn hình chuẩn thi thật (Reading & Writing) */
+.split-layout {
+    display: flex;
+    height: 100%;
+    gap: 20px;
+}
+
+.reading-passage, .writing-prompt {
+    flex: 1;
+    overflow-y: auto;
+    padding-right: 15px;
+    border-right: 2px solid #e2e8f0;
+    line-height: 1.6;
+    font-size: 15px;
+}
+
+.reading-passage h2, .writing-prompt h2 {
+    color: #2c3e50;
+    margin-bottom: 15px;
+}
+
+.reading-passage p, .writing-prompt p {
+    margin-bottom: 15px;
+    text-align: justify;
+}
+
+.reading-questions, .writing-area {
+    flex: 1;
+    overflow-y: auto;
+    padding-left: 5px;
+}
+
+/* Inputs & UI elements mô phỏng */
+.instruction-box {
+    background-color: #e8f4fd;
+    border-left: 4px solid #3498db;
+    padding: 15px;
+    margin-bottom: 20px;
+    border-radius: 0 4px 4px 0;
+}
+
+.audio-player {
+    width: 100%;
+    margin-top: 10px;
+}
+
+.questions-wrapper {
+    max-width: 800px;
+}
+
+.question-block ol {
+    margin-left: 20px;
+}
+
+.question-block li {
+    margin-bottom: 15px;
+    line-height: 2;
+}
+
+.ielts-input {
+    border: none;
+    border-bottom: 2px solid #95a5a6;
+    padding: 2px 5px;
+    font-size: 14px;
+    width: 150px;
+    outline: none;
+    background-color: #fafafa;
+}
+
+.ielts-input:focus {
+    border-bottom-color: #3498db;
+    background-color: #fff;
+}
+
+.qa-row {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+    gap: 10px;
+}
+
+.q-num {
+    font-weight: bold;
+    min-width: 25px;
+}
+
+.ielts-select {
+    padding: 4px;
+    border: 1px solid #bdc3c7;
+    border-radius: 4px;
+    outline: none;
+}
+
+/* Vùng nhúng Iframe của Google Forms */
+.iframe-container {
+    width: 100%;
+    height: calc(100% - 60px);
+    border: 1px solid #cbd5e1;
+    border-radius: 4px;
+    overflow: hidden;
+    background: #f8fafc;
+}
+
+/* Modal báo điểm */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.5);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modal-content {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 8px;
+    width: 400px;
+    text-align: center;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+}
+
+.modal-content h2 {
+    color: #2c3e50;
+    margin-bottom: 20px;
+}
+
+.score-line {
+    font-size: 18px;
+    margin: 10px 0;
+}
+
+.modal-note {
+    font-size: 13px;
+    color: #7f8c8d;
+    margin-top: 15px;
+    margin-bottom: 20px;
+}
+
+.close-btn {
+    background-color: #3498db;
+    color: white;
+    border: none;
+    padding: 8px 20px;
+    cursor: pointer;
+    border-radius: 4px;
+    font-weight: bold;
+}
+
+.close-btn:hover {
+    background-color: #2980b9;
+}
+/* Thanh chuyển Passage trong phần Reading */
+.reading-parts-nav {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 15px;
+    background-color: #e2e8f0;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.part-btn {
+    padding: 8px 20px;
+    border: none;
+    background-color: #fff;
+    color: #2c3e50;
+    cursor: pointer;
+    border-radius: 4px;
+    font-weight: bold;
+    transition: 0.2s;
+}
+
+.part-btn:hover {
+    background-color: #bdc3c7;
+}
+
+.part-btn.active {
+    background-color: #3498db;
+    color: #fff;
+}
+
+.reading-part {
+    display: none;
+    height: calc(100% - 60px); /* Trừ đi chiều cao của thanh nav phụ */
+}
+
+.reading-part.active {
+    display: block;
+}
